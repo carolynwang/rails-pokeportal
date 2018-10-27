@@ -12,7 +12,7 @@ It creates a button that goes to "capture_path", which is the prefix for the /po
 Nylorac
 
 # Question 4: What did you pass into the redirect_to? If it is a path, what did that path need? If it is not a path, why is it okay not to have a path here?
-I passed current_trainer into redirect_to. current_trainer is not a path, but it is okay because...
+I passed current_trainer into redirect_to. current_trainer is not an explicit path, but it is okay because devise takes care of it.
 
 # Question 5: Explain how putting this line "flash[:error] = @pokemon.errors.full_messages.to_sentence" shows error messages on your form.
 Flash is a ActionDispatch that basically exposes whatever it is flashing in the next action and then is cleared out afterwards. In this case, @pokemon is the object that is returned by calling Pokemon.create(..), and it has an attribute called errors that contains any errors that is generated when attempting to create a Pokemon entry. the .full_messages.to_sentence just converts the error messages to a string that can be displayed. This line is placed right before the redirect_to to the form which is the next action, so that is why the error message flashes on the form.
