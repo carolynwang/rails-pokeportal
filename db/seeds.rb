@@ -11,6 +11,7 @@
   Pokemon.create(
     name: name,
     level: rand(1..20),
+    health: 100,
     ndex: ndex,
   )
 end
